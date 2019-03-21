@@ -50,7 +50,7 @@
                                      
                                     <div class="thumb">
                                             
-                                        <img src="/assets/img/blog-img1.jpg" alt="blog-img">
+                                        <img src="{{ $post->image_url }}" alt="blog-img">
                                         <div class="blog-link">
                                             <a href="#"><i class="fa fa-link"></i></a>
                                         </div>

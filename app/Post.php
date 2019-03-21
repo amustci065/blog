@@ -11,7 +11,7 @@ class Post extends Model
         return $this->belongsTo(User::Class);
     }
     // images path
-    Public function getImageUrlAtrribute($Value)
+    Public function getImageUrlAttribute($Value)
     {
         $imageUrl = "";
 
