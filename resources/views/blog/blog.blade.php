@@ -47,26 +47,27 @@
                             <div class="col-lg-6 col-md-12">  
                                      
                                 <div class="single-blog-post">
-                                        @if  ($post->image_url)
+                                     
                                     <div class="thumb">
                                             
-                                        <img src="{{ $post->image_url }}" alt="blog-img">
+                                        <img src="/assets/img/blog-img1.jpg" alt="blog-img">
                                         <div class="blog-link">
                                             <a href="#"><i class="fa fa-link"></i></a>
                                         </div>
                                         <div class="date">
-                                            <span>15 Jan<br>2018</span>
+                                            <span>{{ $post->date }}</span>
                                         </div>
                                         
                                     </div>
-                                    @endif
+                                   
                                     <div class="post-content">
                                         <h3><a href="#">{{ $post->title }}</a></h3>
                                         <p>{{ $post->excerpt }}</p>
                                     </div>
                                     <div class="post-meta">
                                         <ul>
-                                            <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
+                                            <li><a href="#"><i class="fa fa-user"></i> {{ $post->author->name }}
+                                            </a></li>
                                             <li><a href="#"><i class="fa fa-heart-o"></i> 301</a></li>
                                             <li><a href="#"><i class="fa fa-comments-o"></i> 31</a></li>
                                         </ul>
@@ -79,17 +80,7 @@
                             <div class="col-lg-12 col-md-12">
                                 <div class="pagination-area">
                                     <nav aria-label="Page navigation">
-                                        <ul class="pagination justify-content-center">
-                                            <li class="page-item disabled">
-                                            <a class="page-link" href="#" tabindex="-1"><i class="fa fa-angle-left"></i></a>
-                                            </li>
-                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item">
-                                            <a class="page-link" href="#"><i class="fa fa-angle-right"></i></a>
-                                            </li>
-                                        </ul>
+                                        {{ $posts-> links() }}
                                     </nav>
                                 </div>
                             </div>

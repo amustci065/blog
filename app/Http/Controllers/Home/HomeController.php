@@ -21,12 +21,15 @@ public function aboutPage(){
         return view('home.gallery');
     }
 
+    protected $limit  = 4;
+
     public function blogPage()
     {
-        $posts = Post::all();
-        return view('blog.blog', compact ('posts'));
+       
+        $posts = Post::with('author')->LatestFirst()->paginate($this->limit);
+        return view("blog.blog", compact('posts'));
     }
-
+  
     public function showPage(){
         return view('blog.show');
     }
