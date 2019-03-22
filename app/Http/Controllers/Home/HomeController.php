@@ -25,9 +25,13 @@ public function aboutPage(){
 
     public function blogPage()
     {
-       
-        $posts = Post::with('author')->LatestFirst()->paginate($this->limit);
-        return view("blog.blog", compact('posts'));
+        //\DB::enableQueryLog();
+        $posts = Post::with('author')
+        ->latestFirst()
+        ->published()
+        ->Paginate($this->limit);
+         return view("blog.blog", compact('posts'));
+        //dd(\DB::getQueryLog());
     }
   
     public function showPage(){

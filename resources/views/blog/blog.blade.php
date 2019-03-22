@@ -23,7 +23,7 @@
                             <div class="col-lg-12 col-md-12">
                                 <h3>Blog</h3>
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="{{ url('/') }}">Home</a></li>
                                     <li>/</li>
                                     <li>Blog</li>
                                 </ul>
