@@ -25,13 +25,13 @@ public function aboutPage(){
 
     public function blogPage()
     {
-        //\DB::enableQueryLog();
+        
         $posts = Post::with('author')
         ->latestFirst()
         ->published()
         ->Paginate($this->limit);
          return view("blog.blog", compact('posts'));
-        //dd(\DB::getQueryLog());
+       
     }
   
     public function showPage(){
