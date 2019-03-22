@@ -9,28 +9,30 @@
         <meta name="keywords" content="domestic violence, child abuse, human trafficking, corruption, unlawful detention, casualization and other forms of human right abuses">
         <meta name="description" content="HRDAC is a non-governmental organization (NGO) committed to advocate against domestic violence">
         <!-- Bootstrap Min CSS -->
-<link rel="stylesheet" href= "/assets/css/bootstrap.min.css">
+<!--<link rel="stylesheet" href= "/assets/css/bootstrap.min.css"> -->
+
+<link rel="stylesheet" href= "{{ asset('assets/css/bootstrap.min.css') }}">
         
         <!-- Animate Min CSS -->
-        <link rel="stylesheet" href="/assets/css/animate.css">
+        <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
         <!-- Font Awesome Min CSS -->
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}">
         <!-- Magnific Popup Min CSS -->
-        <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
         <!-- IcoFont Min CSS -->
-        <link rel="stylesheet" href="/assets/css/icofont.css">
+        <link rel="stylesheet" href="{{ asset('assets/css/icofont.css') }}">
         <!-- Owl Carousel Min CSS -->
-        <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
         <!-- Classy Nav Min CSS-->
-        <link rel="stylesheet" href="/assets/css/classy-nav.min.css">
+        <link rel="stylesheet" href="{{ asset('assets/css/classy-nav.min.css') }}">
         <!-- Style CSS -->
-        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         <!-- Responsive Min CSS -->
-        <link rel="stylesheet" href="/assets/css/responsive.css">
+        <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
         <!-- Color Default CSS -->	
-		<link rel="stylesheet" href="/assets/css/color/color-default.css">
+		<link rel="stylesheet" href="{{ asset('assets/css/color/color-default.css') }}">
 		<!-- Color Switcher CSS -->	
-		<link rel="stylesheet" href="/assets/dist/color-switcher.css">
+		<link rel="stylesheet" href="{{ asset('assets/dist/color-switcher.css') }}">
 
         <title> HRDAC - Advocacy against domestic violence, corruption, unlawful detention</title>
     </head>
@@ -81,8 +83,9 @@
 					<!-- Classy Menu -->
 					<nav class="classy-navbar justify-content-between" id="eduNav">
 
-						<!-- Logo -->
-						<a class="nav-brand" href="index.html"><img src="assets/img/hrdac.logo.png" alt="hrdac"></a>
+                        <!-- Logo -->
+                        
+						<a class="nav-brand" href="index.html"><img src="{{ asset('assets/img/hrdac.logo.png') }}" alt="hrdac"></a>
 
 						<!-- Navbar Toggler -->
 						<div class="classy-navbar-toggler">

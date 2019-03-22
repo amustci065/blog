@@ -37,73 +37,36 @@
             <section class="blog-details-area ptb-80">
                 <div class="container">
                     <div class="row">
+
                         <div class="col-lg-8 col-md-7 col-sm-12">
+                               
                             <div class="blog-details">
+                             
+                                    @if ($post->image_url)
                                 <div class="img">
-                                    <img src="assets/img/services-details-img.jpg" alt="services-details">
+                                       
+                                    <img src="{{ $post->image_url }}" alt="{{ $post->title }}">
+                                
                                     <div class="date">
-                                        <span>15 Jan <br> 2018</span>
+                                        <span> {{ $post->date }} </span>
                                     </div>
                                 </div>
-                                
+                                @endif
+                               
                                 <div class="blog-details-content">
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
+                                        <li><a href="#"><i class="fa fa-user"></i> {{ $post->author->name }}</a></li>
                                         <li><a href="#"><i class="fa fa-heart-o"></i> 301</a></li>
                                         <li><a href="#"><i class="fa fa-comments-o"></i> 31</a></li>
                                         <li><a href="#"><i class="fa fa-tag"></i> Divorce Case</a></li>
                                     </ul>
-                                    <h3>Top Reasons for Family Disputes and How You Can Solve Them</h3>
-                                    <p><b><i>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."</i></b></p>
+                                    <h3>{{ $post->title}}</h3>
+                                    
                                     
                                     <div class="text">
-                                        <p><b>1. Wait until you're not angry to discuss this problem</b></p>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.</p>
-                                        
-                                        <ul>
-                                            <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</li>
-                                            <li>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</li>
-                                            <li>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</li>
-                                        </ul>
+                                        {{ $post->body }}
                                     </div>
                                     
-                                    <div class="text">
-                                        <p><b>2. Deal with family problems in person</b></p>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.</p>
-                                        
-                                        <ul>
-                                            <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</li>
-                                            <li>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</li>
-                                            <li>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <div class="text">
-                                        <p><b>3. Accept everyone’s faults, including your own</b></p>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.</p>
-                                        
-                                        <ul>
-                                            <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</li>
-                                            <li>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</li>
-                                            <li>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <div class="text">
-                                        <p><b>4. Avoid the blame game</b></p>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.</p>
-                                        
-                                        <ul>
-                                            <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</li>
-                                            <li>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</li>
-                                            <li>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <blockquote class="blockquote text-center">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                        <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                                    </blockquote>
                                     
                                     <div class="blog-categories">
                                         <ul>
@@ -148,6 +111,7 @@
                                     
                                 </div>
                             </div>
+                            
                         </div>
 
                         @include('layouts.sidebar')
@@ -167,27 +131,27 @@
                     <div class="row">
                         <div class="partner-slider">
                             <div class="item">
-                                <a href="#"><img src="assets/img/partner-1.png" alt="partner"></a>
+                                <a href="https://icpc.gov.ng/"><img src="/assets/img/partner-icpc.png" alt="ICPC"></a>
                             </div>
                             
                             <div class="item">
-                                <a href="#"><img src="assets/img/partner-2.png" alt="partner"></a>
+                                <a href="https://www.nigeriarights.gov.ng/"><img src="/assets/img/partner-nhrc.png" alt="National Human Right Commission"></a>
                             </div>
                             
                             <div class="item">
-                                <a href="#"><img src="assets/img/partner-3.png" alt="partner"></a>
+                                <a href="http://lagosministryofjustice.org/"><img src="/assets/img/partner-ministry-of-justice.png" alt="Lagos State Ministry of Justice"></a>
                             </div>
                             
                             <div class="item">
-                                <a href="#"><img src="assets/img/partner-4.png" alt="partner"></a>
+                                <a href="https://www.naptip.gov.ng/"><img src="/assets/img/partner-naptip.png" alt="National Agency for the Prohibition of Trafficking in Persons"></a>
                             </div>
                             
                             <div class="item">
-                                <a href="#"><img src="assets/img/partner-5.png" alt="partner"></a>
+                                <a href="https://icpc.gov.ng/"><img src="/assets/img/partner-icpc.png" alt="partner"></a>
                             </div>
                             
                             <div class="item">
-                                <a href="#"><img src="assets/img/partner-6.png" alt="partner"></a>
+                                <a href="https://www.nigeriarights.gov.ng/"><img src="/assets/img/partner-nhrc.png" alt="partner"></a>
                             </div>
                         </div>
                     </div>

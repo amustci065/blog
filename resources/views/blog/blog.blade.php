@@ -52,7 +52,7 @@
                                             
                                         <img src="{{ $post->image_url }}" alt="blog-img">
                                         <div class="blog-link">
-                                            <a href="#"><i class="fa fa-link"></i></a>
+                                            <a href="{{ route('blog.show', $post->id) }}"><i class="fa fa-link"></i></a>
                                         </div>
                                         <div class="date">
                                             <span>{{ $post->date }}</span>
@@ -61,7 +61,7 @@
                                     </div>
                                    
                                     <div class="post-content">
-                                        <h3><a href="#">{{ $post->title }}</a></h3>
+                                        <h3><a href="{{ route('blog.show', $post->id) }}">{{ $post->title }}</a></h3>
                                         <p>{{ $post->excerpt }}</p>
                                     </div>
                                     <div class="post-meta">
@@ -103,27 +103,27 @@
 		        <div class="row">
                     <div class="partner-slider">
                         <div class="item">
-                            <a href="#"><img src="/assets/img/partner-1.png" alt="partner"></a>
+                            <a href="https://icpc.gov.ng/"><img src="/assets/img/partner-icpc.png" alt="ICPC"></a>
                         </div>
                         
                         <div class="item">
-                            <a href="#"><img src="/assets/img/partner-2.png" alt="partner"></a>
+                            <a href="https://www.nigeriarights.gov.ng/"><img src="/assets/img/partner-nhrc.png" alt="National Human Right Commission"></a>
                         </div>
                         
                         <div class="item">
-                            <a href="#"><img src="/assets/img/partner-3.png" alt="partner"></a>
+                            <a href="http://lagosministryofjustice.org/"><img src="/assets/img/partner-ministry-of-justice.png" alt="Lagos State Ministry of Justice"></a>
                         </div>
                         
                         <div class="item">
-                            <a href="#"><img src="/assets/img/partner-4.png" alt="partner"></a>
+                            <a href="https://www.naptip.gov.ng/"><img src="/assets/img/partner-naptip.png" alt="National Agency for the Prohibition of Trafficking in Persons"></a>
                         </div>
                         
                         <div class="item">
-                            <a href="#"><img src="/assets/img/partner-5.png" alt="partner"></a>
+                            <a href="https://icpc.gov.ng/"><img src="/assets/img/partner-icpc.png" alt="partner"></a>
                         </div>
                         
                         <div class="item">
-                            <a href="#"><img src="/assets/img/partner-6.png" alt="partner"></a>
+                            <a href="https://www.nigeriarights.gov.ng/"><img src="/assets/img/partner-nhrc.png" alt="partner"></a>
                         </div>
                     </div>
 		        </div>
