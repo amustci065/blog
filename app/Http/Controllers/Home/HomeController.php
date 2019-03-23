@@ -36,9 +36,10 @@ public function aboutPage(){
   
     public function showPage($id){
 
-        $post = Post::findOrFail($id);
+        $post = Post::published()->findOrFail($id);
         return view("blog.show", compact('post'));
         //die("show");
+
     }
 
     public function contactPage(){
