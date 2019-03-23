@@ -62,7 +62,7 @@
                                    
                                     <div class="post-content">
                                         <h3><a href="{{ route('blog.show', $post->id) }}">{{ $post->title }}</a></h3>
-                                        <p>{{ $post->excerpt }}</p>
+                                        {!! $post->excerpt_html !!}
                                     </div>
                                     <div class="post-meta">
                                         <ul>

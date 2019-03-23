@@ -1,3 +1,5 @@
+
+
 @extends ('layouts.main')
 
  @section ('content')
@@ -64,7 +66,12 @@
                                     
                                     
                                     <div class="text">
-                                        {{ $post->body }}
+                                        
+                                           
+                                            {!!  $post->body_html !!}
+
+                                        
+
                                     </div>
                                     
                                     
