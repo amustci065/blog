@@ -13,7 +13,7 @@ class CategoriesTableSeeder extends Seeder
     {
         DB::table('categories')->truncate();
 
-        BD::table('categories')->insert([
+        DB::table('categories')->insert([
             [
                 'title' => 'Legal News',
                 'slug' => 'legal-news'
@@ -41,9 +41,10 @@ class CategoriesTableSeeder extends Seeder
         ]);
 
         //update the posts data
-            for ($post_id = 1; $post_id < 10; $post_id++)
+            for ($post_id = 1; $post_id <= 10; $post_id++)
             {
                 $category_id = rand(1, 5);
+                 
                  DB::table('posts')
                  ->where('id', $post_id)
                  ->update(['category_id' => $category_id]);
