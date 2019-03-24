@@ -14,8 +14,10 @@ class CreatePostsTable extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
+            //$table->engine = “InnoDB”;
             $table->increments('id');
             $table->integer('author_id')->unsigned();
+            $table->foreign('author_id')->unique()->references('id')->on('users')->onDelete('restrict');
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('excerpt');
@@ -25,9 +27,7 @@ class CreatePostsTable extends Migration
         });
 
 
-        Schema::create('posts', function (Blueprint $table) {
-        $table->foreign('author_id')->references('id')->on('users')->onDelete('restrict');
-        });
+       
     }
 
     /**

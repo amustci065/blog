@@ -44,7 +44,7 @@
                 <h3 class="title">Recent Post</h3>
                 <div class="single-recent-post">
                     <div class="recent-post-img">
-                        <a href="#"><img src="assets/img/blog-img1.jpg" alt="blog-img"></a>
+                        <a href="#"><img src="{{ $post->image_url }}" alt="blog-img"></a>
                     </div>
                     <div class="recent-post-content">
                         <ul>
@@ -57,7 +57,7 @@
                 
                 <div class="single-recent-post">
                     <div class="recent-post-img">
-                        <a href="#"><img src="assets/img/blog-img2.jpg" alt="blog-img"></a>
+                        <a href="#"><img src=" {{ $post->image_url }} " alt="blog-img"></a>
                     </div>
                     <div class="recent-post-content">
                         <ul>
@@ -70,7 +70,7 @@
                 
                 <div class="single-recent-post mb-0">
                     <div class="recent-post-img">
-                        <a href="#"><img src="assets/img/blog-img3.jpg" alt="blog-img"></a>
+                        <a href="#"><img src=" {{ $post->image_url }} " alt="blog-img"></a>
                     </div>
                     <div class="recent-post-content">
                         <ul>
