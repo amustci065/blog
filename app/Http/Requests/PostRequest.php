@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+use App\Post;
 
 class PostRequest extends FormRequest
 {
@@ -23,13 +24,7 @@ class PostRequest extends FormRequest
      * @return array
      */
     public function rules()
-    {
-        
-       
-        // $id = $this->id;
-        // dd("hh");
-        // dd($this->method());
-        
+    {        
         $rules = [
             'title'        => 'required',
             'slug'         => 'required|unique:posts,slug',
@@ -39,19 +34,19 @@ class PostRequest extends FormRequest
             'image'      => 'required|image|mimes:jpg,jpeg,bmp,png',
         ];
     
-       
-        // switch($this->method()) 
-        // {
-        // case 'PUT':
-        // case 'PATCH':
-        //     //{
-        // return  [
-        //       $rules ['slug'] = 'required|unique:posts,slug,'. $this->route('blog'),
-        //      //$rules ['slug'] = "required|unique:posts,slug,$this->id,id",
-        //  ];
-        // break; 
-        //    //}         
-        // }
+        if ($this->isMethod('patch') || $this->isMethod('put')) 
+        {
+            $segments = $this->segments();
+            $Pid = intval(end($segments));
+            $rules = [
+                'title'        => 'required',
+                'slug'         => 'required|unique:posts,slug,$Pid',
+                'body'         => 'required',
+                'published_at' => 'date_format:Y-m-d H:i:s',
+                'category_id'  => 'required',
+                'image'      => 'required|image|mimes:jpg,jpeg,bmp,png',
+            ];
+        }
      return $rules;
     }
 }
