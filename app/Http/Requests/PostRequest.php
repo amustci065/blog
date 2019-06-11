@@ -40,7 +40,7 @@ class PostRequest extends FormRequest
             $Pid = intval(end($segments));
             $rules = [
                 'title'        => 'required',
-                'slug'         => 'required|unique:posts,slug,$Pid',
+                'slug'         => ['required', Rule::unique('posts')->ignore($Pid),],
                 'body'         => 'required',
                 'published_at' => 'date_format:Y-m-d H:i:s',
                 'category_id'  => 'required',
