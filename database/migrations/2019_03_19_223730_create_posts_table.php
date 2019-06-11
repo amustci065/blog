@@ -11,10 +11,13 @@ class CreatePostsTable extends Migration
      *
      * @return void
      */
+
+
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
             //$table->engine = “InnoDB”;
+
             $table->increments('id');
             $table->integer('author_id')->unsigned();
             $table->foreign('author_id')->unique()->references('id')->on('users')->onDelete('restrict');
@@ -22,7 +25,7 @@ class CreatePostsTable extends Migration
             $table->string('slug')->unique();
             $table->text('excerpt');
             $table->text('body');
-            $table->string('image')->nullable();
+            $table->string('image')->nullable();   
             $table->timestamps();
         });
 

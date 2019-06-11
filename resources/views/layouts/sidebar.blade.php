@@ -12,15 +12,15 @@
             -->
             <div class="side-bar-box categories-box">
                 <h3 class="title">Categories</h3>
+                @foreach ($categories as $category)
                 <ul>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> News (10)</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Legal News (15)</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Events (09)</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Resources (19)</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Illegal News (13)</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Legal Alerts (16)</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Investigations (05)</a></li>
+                    <li><a href="{{ route('category', $category->slug) }}"><i class="fa fa-angle-double-right"></i> {{ $category->title }} </a>
+                    <span class="badge pull-right"> {{ $category->posts->count() }}</span>
+                    </li>
+                  
+                    
                 </ul>
+                @endforeach
             </div>
             <!--
             <div class="side-bar-box tags-box">
@@ -40,46 +40,32 @@
                 </ul>
             </div>
             -->
+            
             <div class="side-bar-box recent-post mb-0">
                 <h3 class="title">Recent Post</h3>
+               
+               
                 <div class="single-recent-post">
+                    
+                   
                     <div class="recent-post-img">
-                        <a href="#"><img src="{{ $post->image_url }}" alt="blog-img"></a>
+                        <a href="{{ route('blog.show', $post->slug) }}"><img src="{{ $post->image_url }}" alt="blog-img"></a>
                     </div>
+                  
                     <div class="recent-post-content">
                         <ul>
                             <li><a href="#">By Admin</a></li>
-                            <li><a href="#"><i class="fa fa-calendar"></i> Jan 8, 2018</a></li>
+                            <li><a href="#"><i class="fa fa-calendar"></i> {{ $post->date }}</a></li>
                         </ul>
-                        <h3><a href="#">Employment tribunal hears cases against National</a></h3>
+                        <h3><a href="{{ route('blog.show', $post->slug) }}">{{ $post->title }}</a></h3>
                     </div>
+                   
                 </div>
                 
-                <div class="single-recent-post">
-                    <div class="recent-post-img">
-                        <a href="#"><img src=" {{ $post->image_url }} " alt="blog-img"></a>
-                    </div>
-                    <div class="recent-post-content">
-                        <ul>
-                            <li><a href="#">By Admin</a></li>
-                            <li><a href="#"><i class="fa fa-calendar"></i> Jan 8, 2018</a></li>
-                        </ul>
-                        <h3><a href="#">Employment tribunal hears cases against National</a></h3>
-                    </div>
-                </div>
-                
-                <div class="single-recent-post mb-0">
-                    <div class="recent-post-img">
-                        <a href="#"><img src=" {{ $post->image_url }} " alt="blog-img"></a>
-                    </div>
-                    <div class="recent-post-content">
-                        <ul>
-                            <li><a href="#">By Admin</a></li>
-                            <li><a href="#"><i class="fa fa-calendar"></i> Jan 8, 2018</a></li>
-                        </ul>
-                        <h3><a href="#">Employment tribunal hears cases against National</a></h3>
-                    </div>
-                </div>
+               
             </div>
+           
         </div>
     </div>
+
+    

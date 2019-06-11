@@ -42,12 +42,21 @@
                     <div class="col-lg-8 col-md-7 col-sm-7">
                         <div class="row">
 
+                            @if (! $posts->count())
+                                <div class="alert alert-info">
+                                    <p> Nothing Found </p>
+                                </div>
+                                @else
+                                
+                                
+
                                 @foreach($posts as $post)
 
                             <div class="col-lg-6 col-md-12">  
-                                     
+                                   
                                 <div class="single-blog-post">
-                                     
+                                        
+                                        @if ($post->image_url)
                                     <div class="thumb">
                                             
                                         <img src="{{ $post->image_url }}" alt="blog-img">
@@ -59,7 +68,8 @@
                                         </div>
                                         
                                     </div>
-                                   
+                                    @endif
+
                                     <div class="post-content">
                                         <h3><a href="{{ route('blog.show', $post->id) }}">{{ $post->title }}</a></h3>
                                         {!! $post->excerpt_html !!}
@@ -68,14 +78,17 @@
                                         <ul>
                                             <li><a href="#"><i class="fa fa-user"></i> {{ $post->author->name }}
                                             </a></li>
-                                            <li><a href="#"><i class="fa fa-heart-o"></i> 301</a></li>
+                                            <li><a href="{{ route('category', $post->category->id) }}"><i class="fa fa-folder-o"></i> {{ $post->category->title }}</a></li>
                                             <li><a href="#"><i class="fa fa-comments-o"></i> 31</a></li>
                                         </ul>
                                     </div>
                                 </div>
+                               
                             </div>
 
-                            @endforeach                           
+                            @endforeach 
+
+                        @endif                   
 
                             <div class="col-lg-12 col-md-12">
                                 <div class="pagination-area">
@@ -97,7 +110,7 @@
         <section class="partner-area ptb-80">
 		    <div class="container">
                 <div class="section-title">
-                    <h3>Clinet</h3>
+                    <h3>Client</h3>
                     <h2>Our <span>Partner</span></h2>
                 </div>
 		        <div class="row">
