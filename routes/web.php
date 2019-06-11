@@ -24,11 +24,7 @@ Route::get('gallery', 'Home\HomeController@galleryPage');
 Route::get('blog', 'Home\HomeController@blogPage');
 //Route::get('show', 'Home\HomeController@showPage');
 
-Route::get('/blog/{post}', [
-
-	'uses' => 'Home\HomeController@showPage',
-    'as' => 'blog.show'   
-]);
+Route::get('/blog/{post}', 'Home\HomeController@showPage')->name('home.blog.show');
 
 Route::get('/category/{category}', [
 

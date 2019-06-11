@@ -61,7 +61,7 @@
                                             
                                         <img src="{{ $post->image_url }}" alt="blog-img">
                                         <div class="blog-link">
-                                            <a href="{{ route('blog.show', $post->id) }}"><i class="fa fa-link"></i></a>
+                                            <a href="{{ route('home.blog.show', $post->slug) }}"><i class="fa fa-link"></i></a>
                                         </div>
                                         <div class="date">
                                             <span>{{ $post->date }}</span>
@@ -71,7 +71,7 @@
                                     @endif
 
                                     <div class="post-content">
-                                        <h3><a href="{{ route('blog.show', $post->id) }}">{{ $post->title }}</a></h3>
+                                        <h3><a href="{{ route('home.blog.show', $post->slug) }}">{{ $post->title }}</a></h3>
                                         {!! $post->excerpt_html !!}
                                     </div>
                                     <div class="post-meta">

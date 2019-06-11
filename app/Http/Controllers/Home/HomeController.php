@@ -75,12 +75,8 @@ public function aboutPage(){
             $query->published();
         } ])->orderBy('title', 'asc')->get();
 
-        $post = Post::published()->findOrFail($id);
+        $post = Post::published()->where('slug', $id)->first();
         return view("blog.show", compact('post', 'categories'));
-        //die("show");
-
-       
-
     }
 
     public function contactPage(){   
