@@ -143,6 +143,23 @@ class BlogController extends BackendController
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+        // dd($post);
+        $post->delete();
+        return redirect('/backend/blog')->with('message', 'Your post was deleted successfully!');
+
+    }
+
+    public function handleRequest($request){
+            $post['author_id']= Auth::user()->id;
+            $post['title'] = $request->title;
+            $post['slug'] = $request->slug;
+            $post['excerpt'] = $request->excerpt;
+            $post['body'] = $request->body;
+            $post['published_at'] = $request->published_at;
+            $post['category_id'] = $request->category_id;
+            $post['image'] = $this->uploadImage($request);
+            // dd($post);
+            return $post;
     }
 }

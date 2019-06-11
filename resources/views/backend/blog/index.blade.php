@@ -60,10 +60,14 @@
                                     <td> 
                                         <a href="/backend/blog/{{$post->id}}/edit" class="btn btn-xs btn-default">
                                             <i class="fa fa-edit"></i>
-                                        </a>
-                                        <a href="/backend/blog/{{$post->id}}/destroy" class="btn btn-xs btn-danger">
-                                             <i class="fa fa-times"></i>
-                                         </a>
+                                        </a> 
+                                        {{ Form::open(array('url' => 'backend/blog/' . $post->id, 'class' => 'pull-right')) }}
+                                            {{ Form::hidden('_method', 'DELETE') }}
+                                            <button class="btn btn-xs btn-danger">
+                                               <i class="fa fa-times"></i>
+                                           </button>
+                                        {{ Form::close() }}
+                                        
                                     </td>
                                     <td> {{ $post->title }} </td>
                                     <td> {{ $post->author->name }} </td>

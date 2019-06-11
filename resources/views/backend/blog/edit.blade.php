@@ -28,7 +28,7 @@
 
                   {!! Form::model($post, [
                         'method' => 'PUT',
-                        'url'    => 'backend/blog/{{$post->id}}/update',
+                        'route' => ['blog.update', $post->id],
                         'files'  =>  TRUE,
                         'id' => 'post-form'
                   ]) !!} 

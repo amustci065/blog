@@ -26,8 +26,9 @@ class PostRequest extends FormRequest
     {
         
        
-        //$id = $this->id;
-        //dd($this->method());
+        // $id = $this->id;
+        // dd("hh");
+        // dd($this->method());
         
         $rules = [
             'title'        => 'required',
@@ -39,18 +40,18 @@ class PostRequest extends FormRequest
         ];
     
        
-        switch($this->method()) 
-        {
-        case 'PUT':
-        case 'PATCH':
-            //{
-        return  [
-              $rules ['slug'] = 'required|unique:posts,slug,'. $this->route('blog'),
-             //$rules ['slug'] = "required|unique:posts,slug,$this->id,id",
-         ];
-        break; 
-           //}         
-        }
+        // switch($this->method()) 
+        // {
+        // case 'PUT':
+        // case 'PATCH':
+        //     //{
+        // return  [
+        //       $rules ['slug'] = 'required|unique:posts,slug,'. $this->route('blog'),
+        //      //$rules ['slug'] = "required|unique:posts,slug,$this->id,id",
+        //  ];
+        // break; 
+        //    //}         
+        // }
      return $rules;
     }
 }

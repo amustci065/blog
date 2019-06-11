@@ -17,8 +17,7 @@ class CreateUserIdTable extends Migration
         Schema::connection('posts')->table('posts_sessions', function (Blueprint $table) {
             $table->string('user_id')->nullable();
         });
-    
-}
+    }
 
 /**
      * Reverse the migrations.

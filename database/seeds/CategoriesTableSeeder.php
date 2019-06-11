@@ -13,7 +13,7 @@ class CategoriesTableSeeder extends Seeder
     {
         DB::table('categories')->truncate();
 
-        BD::table('categories')->insert([
+        DB::table('categories')->insert([
             [
                 'title' => 'Legal News',
                 'slug' => 'legal-news'
