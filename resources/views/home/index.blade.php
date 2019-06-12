@@ -420,80 +420,38 @@ Human Right Defenders and Advocacy Centre came into operation in 2010 through th
                 </div>
                 <div class="row">
                     <div class="blog-slider">
+                        @foreach($posts as $post)
                         <div class="col-lg-12">
                             <div class="single-blog-post">
                                 <div class="thumb">
+                                    @if ($post->image_url)
+                                    <img src="{{ $post->image_url }}" style="max-height: 250px;" alt="blog-img">
+                                    <div class="blog-link">
+                                        <a href="{{ route('home.blog.show', $post->slug) }}"><i class="fa fa-link"></i></a>
+                                    </div>
+                                    @else
                                     <img src="/assets/img/blog-img1.jpg" alt="blog-img">
                                     <div class="blog-link">
-                                        <a href="blog-details.html"><i class="fa fa-link"></i></a>
+                                        <a href="{{ route('home.blog.show', $post->slug) }}"><i class="fa fa-link"></i></a>
                                     </div>
+                                    @endif
                                     <div class="date">
-                                        <span>15 Jan<br>2018</span>
+                                        <span>{{ $post->date }}</span>
                                     </div>
                                 </div>
                                 <div class="post-content">
-                                    <h3><a href="blog-details.html">Employment tribunal hears cases against National Gallery</a></h3>
-                                    <p>dfsfdsfdsfdsfdsfdsghfhjgjhgjhkhjlkj.</p>
+                                    <h3><a href="{{ route('home.blog.show', $post->slug) }}">{{ $post->title }}</p>
                                 </div>
                                 <div class="post-meta">
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
+                                        <li><a href="#"><i class="fa fa-user"></i> {{ $post->author->name }}</a></li>
                                         <li><a href="#"><i class="fa fa-heart-o"></i> 301</a></li>
                                         <li><a href="#"><i class="fa fa-comments-o"></i> 31</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="col-lg-12">
-                            <div class="single-blog-post">
-                                <div class="thumb">
-                                    <img src="/assets/img/blog-img2.jpg" alt="blog-img">
-                                    <div class="blog-link">
-                                        <a href="blog-details.html"><i class="fa fa-link"></i></a>
-                                    </div>
-                                    <div class="date">
-                                        <span>19 Jan<br>2018</span>
-                                    </div>
-                                </div>
-                                <div class="post-content">
-                                    <h3><a href="blog-details.html">Are lawyers allowed to represent family members?</a></h3>
-                                    <p>Lorem ipsum dolor sit amet,consectetur adipisicing elit,sed eiusmod tempor incididunt ut labore et dolor emagna eliqua.</p>
-                                </div>
-                                <div class="post-meta">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
-                                        <li><a href="#"><i class="fa fa-heart-o"></i> 220</a></li>
-                                        <li><a href="#"><i class="fa fa-comments-o"></i> 19</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-12">
-                            <div class="single-blog-post">
-                                <div class="thumb">
-                                    <img src="/assets/img/blog-img3.jpg" alt="blog-img">
-                                    <div class="blog-link">
-                                        <a href="blog-details.html"><i class="fa fa-link"></i></a>
-                                    </div>
-                                    <div class="date">
-                                        <span>20 Feb<br>2018</span>
-                                    </div>
-                                </div>
-                                <div class="post-content">
-                                    <h3><a href="blog-details.html">Lawyer who asked woman to bend over censured, fined</a></h3>
-                                    <p>Lorem ipsum dolor sit amet,consectetur adipisicing elit,sed eiusmod tempor incididunt ut labore et dolor emagna eliqua.</p>
-                                </div>
-                                <div class="post-meta">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
-                                        <li><a href="#"><i class="fa fa-heart-o"></i> 199</a></li>
-                                        <li><a href="#"><i class="fa fa-comments-o"></i> 14</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach 
                     </div>
                 </div>
             </div>

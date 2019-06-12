@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home.index');
-});
+// Route::get('/', function () {
+//     return view('home.index');
+// });
+
+Route::get('/', 'Home\HomeController@homepage')->name('home.show');
 
 // // Home Navs 
 

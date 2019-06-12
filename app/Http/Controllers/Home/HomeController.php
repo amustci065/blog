@@ -11,9 +11,17 @@ use App\User;
 
 class HomeController extends Controller
 {
-  
+    protected $limit  = 4;
 
-public function aboutPage(){
+    public function homepage(){ 
+        $posts = Post::with('author')
+        ->latestFirst()
+        ->published()
+        ->Paginate($this->limit);
+        return view('home.index', compact('posts'));
+    }
+
+    public function aboutPage(){
         return view('home.about');
     }
 
@@ -25,8 +33,6 @@ public function aboutPage(){
         return view('home.gallery');
     }
 
-
-    protected $limit  = 4;
 
     public function blogPage()
     {
@@ -50,14 +56,12 @@ public function aboutPage(){
         $categories = Category::with(['posts' => function($query) {
             $query->published();
         } ])->orderBy('title', 'asc')->get();
-        
-        //\DB::enableQueryLog();
-        
-          $posts = $category->posts()
-                            ->with('author')
-                            ->latestFirst()
-                            ->published()
-                            ->Paginate($this->limit);
+
+        $posts = $category->posts()
+                        ->with('author')
+                        ->latestFirst()
+                        ->published()
+                        ->Paginate($this->limit);
         return view("blog.blog", compact('posts', 'categories', 'categoryName'));  
          // dd(\DB::getQueryLog());
        
